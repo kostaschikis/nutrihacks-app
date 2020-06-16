@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <!--  single: we make sure we can select only 1 menu item  -->
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
@@ -16,5 +17,13 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/nav_bmi"
+            android:icon="@drawable/ic_menu_bmi"
+            android:title="@string/menu_bmi" />
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_menu_contact"
+            android:title="@string/menu_contact" />
     </group>
 </menu>
