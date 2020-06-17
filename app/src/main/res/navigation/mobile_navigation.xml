@@ -36,8 +36,8 @@
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_ourteam"
         android:name="com.example.nutrihacks_app.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_ourteam"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>
