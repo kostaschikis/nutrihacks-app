@@ -5,6 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
 
+    <!--  Home Fragment  -->
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.nutrihacks_app.ui.home.HomeFragment"
@@ -15,6 +16,8 @@
             android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
             app:destination="@id/nav_home_second" />
     </fragment>
+
+    <!--  Second Home Fragment  -->
     <fragment
         android:id="@+id/nav_home_second"
         android:name="com.example.nutrihacks_app.ui.home.HomeSecondFragment"
@@ -29,12 +32,23 @@
             app:argType="string" />
     </fragment>
 
+    <!--  Photos Gallery Fragment  -->
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.nutrihacks_app.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
+    <!--  Contact Us Fragment  -->
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="com.example.nutrihacks_app.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_contact"
+        tools:layout="@layout/fragment_contact" />
+
+    <!--  BMI Fragment  -->
+
+    <!--  Our Team Fragment  -->
     <fragment
         android:id="@+id/nav_ourteam"
         android:name="com.example.nutrihacks_app.ui.slideshow.SlideshowFragment"
