@@ -1,4 +1,4 @@
-package com.example.nutrihacks_app.ui.slideshow;
+package com.example.nutrihacks_app.ui.team;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,19 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.nutrihacks_app.R;
 
-public class SlideshowFragment extends Fragment {
+public class TeamFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private TeamViewModel TeamViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        TeamViewModel =
+                ViewModelProviders.of(this).get(TeamViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_team, container, false);
+
+        final TextView textView;
+        textView = root.findViewById(R.id.text_team);
+        TeamViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

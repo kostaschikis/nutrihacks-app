@@ -40,18 +40,14 @@
         tools:layout="@layout/fragment_gallery" />
 
     <!--  Contact Us Fragment  -->
-    <fragment
-        android:id="@+id/nav_contact"
-        android:name="com.example.nutrihacks_app.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_contact"
-        tools:layout="@layout/fragment_contact" />
+
 
     <!--  BMI Fragment  -->
 
     <!--  Our Team Fragment  -->
     <fragment
         android:id="@+id/nav_ourteam"
-        android:name="com.example.nutrihacks_app.ui.slideshow.SlideshowFragment"
+        android:name="com.example.nutrihacks_app.ui.team.TeamFragment"
         android:label="@string/menu_ourteam"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_team" />
 </navigation>
