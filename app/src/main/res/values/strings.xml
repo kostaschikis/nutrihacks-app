@@ -14,6 +14,9 @@
     <string name="menu_contact">Contact Us</string>
 
     <string name="home_second">Home Second</string>
+
+    <!--  Home  -->
     <string name="who_we_are">NutriHacks is an all in one platform focused on diets, fitness and well-being. We have a team of professionals in the field and a strong community that will help you improve the quality of your everyday life.</string>
+    <string name="Heading">Who We Are</string>
 
 </resources>
