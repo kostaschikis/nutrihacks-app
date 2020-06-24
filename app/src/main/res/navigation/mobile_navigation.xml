@@ -40,7 +40,11 @@
         tools:layout="@layout/fragment_gallery" />
 
     <!--  Contact Us Fragment  -->
-
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="com.example.nutrihacks_app.ui.contact.ContactFragment"
+        android:label="@string/menu_contact"
+        tools:layout="@layout/fragment_contact" />
 
     <!--  BMI Fragment  -->
 
