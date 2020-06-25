@@ -1,4 +1,4 @@
-package com.example.nutrihacks_app;
+package com.example.nutrihacks_app.ui.gallery;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +7,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 import androidx.fragment.app.FragmentActivity;
+
+import com.example.nutrihacks_app.R;
 
 public class ImageAdapter  extends BaseAdapter {
 

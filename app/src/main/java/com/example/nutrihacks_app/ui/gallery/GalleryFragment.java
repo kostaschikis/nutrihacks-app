@@ -7,15 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
-import com.example.nutrihacks_app.ImageAdapter;
 import com.example.nutrihacks_app.R;
 
 public class GalleryFragment extends Fragment {
@@ -31,6 +26,18 @@ public class GalleryFragment extends Fragment {
 
         // Set image adapter to the Grid View
         gridView.setAdapter(new ImageAdapter(getActivity()));
+
+        // Fullscreen
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(getActivity(), FullScreenActivity.class);
+                intent.putExtra("id",position);
+                startActivity(intent);
+
+            }
+        });
 
         return root;
     }
