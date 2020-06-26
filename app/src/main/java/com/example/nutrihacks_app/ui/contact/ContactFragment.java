@@ -24,8 +24,8 @@ public class ContactFragment extends Fragment {
         // Inflate the View Layout
         View root = inflater.inflate(R.layout.fragment_contact, container, false);
 
-        final TextView textView = root.findViewById(R.id.text_contact);
-        textView.setText("Contact Page");
+    //        final TextView textView = root.findViewById(R.id.text_contact);
+    //        textView.setText("Contact Page");
 
         return root;
     }
