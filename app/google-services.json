@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "175706591018",
+    "firebase_url": "https://nutrihacks-app-19651.firebaseio.com",
+    "project_id": "nutrihacks-app-19651",
+    "storage_bucket": "nutrihacks-app-19651.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175706591018:android:ec40bbf86fec9286749853",
+        "android_client_info": {
+          "package_name": "com.example.nutrihacks_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175706591018-btqluci1di5jrk57ltdgghvlb8s84ai4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nutrihacks_app",
+            "certificate_hash": "5b1f6c6e49c2a15e422a4ba3ae73bbf71c0426b7"
+          }
+        },
+        {
+          "client_id": "175706591018-jgmkphbk0puk8nidc34v0qmueqsh1q8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0DcDFThunQNPT4ATfXzE-nVN6rfNEp90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "175706591018-jgmkphbk0puk8nidc34v0qmueqsh1q8p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
