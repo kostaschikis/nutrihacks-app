@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 
 
 import com.example.nutrihacks_app.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -62,9 +64,19 @@ public class ContactFragment extends Fragment {
         // Make a new user object
         User user = new User(firstName, lastName, email, age);
 
-        database.child("users").child(userId).setValue(user);
-        Toast.makeText(getActivity(), "User inserted successfully",Toast.LENGTH_LONG).show();
-
+        database.child("users").child(userId).setValue(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getActivity(), "User inserted successfully",Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getActivity(), "Failed, Something went wrong :(",Toast.LENGTH_LONG).show();
+                    }
+                });
         uid++;
     }
 
