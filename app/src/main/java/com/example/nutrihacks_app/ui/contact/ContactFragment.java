@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class ContactFragment extends Fragment {
-    // Firebase Database Instance
+    // Firebase Database Connection Instance
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     // Save Button
     private Button btnsave;
@@ -64,21 +64,22 @@ public class ContactFragment extends Fragment {
         // Make a new user object
         User user = new User(firstName, lastName, email, age);
 
+        // Store user in Firebase DB inside 'users' collection
         database.child("users").child(userId).setValue(user)
+                // On success display success toast
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(getActivity(), "User inserted successfully",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "User inserted successfully", Toast.LENGTH_LONG).show();
                     }
                 })
+                // On failure display failure toast
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getActivity(), "Failed, Something went wrong :(",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Failed, Something went wrong :(", Toast.LENGTH_LONG).show();
                     }
                 });
         uid++;
     }
-
-
 }

@@ -25,6 +25,13 @@
     <string name="last_name">Last Name</string>
     <string name="age">Age</string>
     <string name="email">Email</string>
+    <!--  BMI  -->
+    <string name="bmi_heading">Calculate Your BMI</string>
+    <string name="height">Hieght (cm)</string>
+    <string name="weight">Weight (kg)</string>
+    <string name="gender">Gender</string>
+    <string name="text_bmi">Your BMI</string>
+    <string name="bmi_result"></string>
 
 
 </resources>

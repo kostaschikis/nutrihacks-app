@@ -31,11 +31,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textFirstName"
+            android:id="@+id/textHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/first_name"
@@ -77,10 +83,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="textEmailAddress" />
 
         <TextView
-            android:id="@+id/textAge"
+            android:id="@+id/textGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/age"
@@ -92,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:ems="10"
-            android:inputType=""/>
+            android:inputType="number" />
 
         <Button
             android:id="@+id/btnSave"

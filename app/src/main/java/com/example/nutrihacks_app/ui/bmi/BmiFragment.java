@@ -19,9 +19,6 @@ public class BmiFragment extends Fragment {
         // Inflate the View Layout
         View root = inflater.inflate(R.layout.fragment_bmi, container, false);
 
-        final TextView textView = root.findViewById(R.id.text_bmi);
-        textView.setText("BMI Page");
-
         return root;
     }
 }
