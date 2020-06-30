@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -17,6 +18,10 @@ import androidx.fragment.app.Fragment;
 import com.example.nutrihacks_app.R;
 
 import org.w3c.dom.Text;
+
+import java.text.DecimalFormat;
+
+import javax.xml.validation.Validator;
 
 public class BmiFragment extends Fragment {
     // BMI
@@ -54,30 +59,70 @@ public class BmiFragment extends Fragment {
                 // Find selected gender
                 int selectedGender = genderRadio.getCheckedRadioButtonId();
                 userGender = (RadioButton) root.findViewById(selectedGender);
+                // Validate user input
+//                validate();
                 // calculate BMI
-                BMI = calculateBMI(userGender.getText().toString(), Integer.parseInt(String.valueOf(userHeight)), Integer.parseInt(String.valueOf(userWeight)));
-                    userBMI.setText(Double.toString(BMI));
+                BMI = calculateBMI(userGender.getText().toString(), Integer.parseInt(userHeight.getText().toString()), Integer.parseInt(userWeight.getText().toString()));
+                // Find Designation
+                String des = findDesignation(BMI, userGender.getText().toString());
+                // Set Text Views (BMI and Designation)
+                userBMI.setText(new DecimalFormat("##.#").format(BMI));
+                designation.setText(des);
+            }
 
+            private void validate() {
+                if (userHeight.getText().toString().equals("")) {
+                    Toast.makeText(getActivity(), userHeight.getText().toString(), Toast.LENGTH_LONG).show();
+                }
             }
 
             private double calculateBMI(String gender, int height, int weight) {
-                double BMI = weight / (height * height);
-                BMI = roundBMI(BMI);
-                return BMI;
+                return weight / (Math.pow(height, 2)) * 10000;
             }
 
-            private void femaleBMI() {}
-
-            private void maleBMI() {}
-
-            private double roundBMI (double BMI) {
-                BMI /= Math.pow(10, (int) Math.log10(f));
-                BMI = ((int) (BMI * 10)) / 10.0f; // <-- performs one digit floor
-                return Math.round(BMI);
+            private String findDesignation(double bmi, String userGender) {
+                String designation = "";
+                if (userGender.equals("Female")) {
+                    designation = femaleDes(bmi);
+                } else if (userGender.equals("Male")) {
+                    designation = maleDes(bmi);
+                }
+                return designation;
             }
 
-            private void writeBMI() {}
+            private String femaleDes(double bmi) {
 
+                if (bmi < 18.5) {
+                    return "Underweight";
+                } else if (bmi >= 18.5 && bmi <= 23.5) {
+                    return "Normal";
+                } else if (bmi >= 23.6 && bmi <= 28.6) {
+                    return "Overweight";
+                } else if (bmi >= 28.7 && bmi <= 40) {
+                    return "Obese";
+                } else if (bmi > 40) {
+                    return "Morbidly obese";
+                } else  {
+                    return null;
+                }
+            }
+
+            private String maleDes(double bmi) {
+
+                if (bmi < 19.5) {
+                    return "Underweight";
+                } else if (bmi >= 19.5 && bmi <= 24.9) {
+                    return "Normal";
+                } else if (bmi >= 25 && bmi <= 29.9) {
+                    return "Overweight";
+                } else if (bmi >= 30 && bmi <= 40) {
+                    return "Obese";
+                } else if (bmi > 40) {
+                    return "Morbidly obese";
+                } else  {
+                    return null;
+                }
+            }
 
         });
 
