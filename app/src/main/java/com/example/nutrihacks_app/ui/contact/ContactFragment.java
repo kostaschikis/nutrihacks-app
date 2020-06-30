@@ -24,7 +24,7 @@ public class ContactFragment extends Fragment {
     // Firebase Database Connection Instance
     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     // Save Button
-    private Button btnsave;
+    private Button btnSave;
     // User Input
     private EditText firstName, lastName, email, age;
     private long uid = 1;
@@ -37,7 +37,7 @@ public class ContactFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_contact, container, false);
 
         // Fetch Button Views
-        btnsave = root.findViewById(R.id.btnSave);
+        btnSave = root.findViewById(R.id.btnSave);
         // Fetch User Input Views
         firstName = (EditText) root.findViewById(R.id.firstName);
         lastName = (EditText) root.findViewById(R.id.lastName);
@@ -45,7 +45,7 @@ public class ContactFragment extends Fragment {
         age = (EditText) root.findViewById(R.id.age);
 
         // Save Button Listener
-        btnsave.setOnClickListener(new View.OnClickListener() {
+        btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 writeNewUser(String.valueOf(uid),

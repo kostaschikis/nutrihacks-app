@@ -48,6 +48,7 @@
             android:textSize="18sp" />
 
         <RadioGroup
+            android:id="@+id/userGender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -102,12 +103,19 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/totalNumTextView"
+            android:id="@+id/userBMI"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="30sp"
             android:text="0"
             android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/userDesignation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_des"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btnCalc"
