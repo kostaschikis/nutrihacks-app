@@ -16,22 +16,14 @@ import com.example.nutrihacks_app.R;
 
 public class TeamFragment extends Fragment {
 
-    private TeamViewModel TeamViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        TeamViewModel =
-                ViewModelProviders.of(this).get(TeamViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_team, container, false);
 
         final TextView textView;
         textView = root.findViewById(R.id.text_team);
-        TeamViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

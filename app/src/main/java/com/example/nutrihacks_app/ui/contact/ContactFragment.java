@@ -47,22 +47,28 @@ public class ContactFragment extends Fragment {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                writeNewUser(String.valueOf(uid),
-                        firstName.getText().toString().trim(),
+                // 1. Validate user input
+                if (!validateInput(firstName.getText().toString(), lastName.getText().toString(), email.getText().toString(), age.getText().toString())) {
+                    Toast.makeText(getActivity(), "Please fill all the fields", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // 2. Make user object
+                User user = new User(firstName.getText().toString().trim(),
                         lastName.getText().toString().trim(),
                         email.getText().toString().trim(),
-                        age.getText().toString().trim()
-                );
+                        age.getText().toString().trim());
+
+
+                // 3. Try to store user in Firebase
+                writeNewUser(String.valueOf(uid), user);
             }
         });
 
         return root;
     }
 
-    private void writeNewUser(String userId, String firstName, String lastName, String email, String age) {
-        // Make a new user object
-        User user = new User(firstName, lastName, email, age);
-
+    private void writeNewUser(String userId, User user) {
         // Store user in Firebase DB inside 'users' collection
         database.child("users").child(userId).setValue(user)
                 // On success display success toast
@@ -81,4 +87,12 @@ public class ContactFragment extends Fragment {
                 });
         uid++;
     }
+
+    private Boolean validateInput(String firsName, String lastName, String email, String age) {
+        if (firsName.equals("") || lastName.equals("") || email.equals("") || age.equals("")) {
+            return false;
+        }
+        return true;
+    }
+
 }
