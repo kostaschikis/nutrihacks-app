@@ -32,19 +32,18 @@ public class ContactFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
         // Inflate the View Layout
         View root = inflater.inflate(R.layout.fragment_contact, container, false);
 
-        // Fetch Button Views
+        // Get Button View
         btnSave = root.findViewById(R.id.btnSave);
-        // Fetch User Input Views
+        // Get User Input Views
         firstName = (EditText) root.findViewById(R.id.firstName);
         lastName = (EditText) root.findViewById(R.id.lastName);
         email = (EditText) root.findViewById(R.id.email);
         age = (EditText) root.findViewById(R.id.age);
 
-        // Save Button Listener
+        // When user submits the form
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

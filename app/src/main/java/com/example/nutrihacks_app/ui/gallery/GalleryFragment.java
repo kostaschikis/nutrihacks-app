@@ -19,6 +19,7 @@ public class GalleryFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the View Layout
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
 
         // Select Grid View
@@ -31,11 +32,9 @@ public class GalleryFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 Intent intent = new Intent(getActivity(), FullScreenActivity.class);
                 intent.putExtra("id",position);
                 startActivity(intent);
-
             }
         });
 
