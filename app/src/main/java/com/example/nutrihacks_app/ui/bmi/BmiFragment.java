@@ -17,16 +17,12 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nutrihacks_app.R;
 
-import org.w3c.dom.Text;
-
 import java.text.DecimalFormat;
 
-import javax.xml.validation.Validator;
 
 public class BmiFragment extends Fragment {
-    // BMI
     private double BMI;
-    private TextView designation;
+    private String userDesignation;
     // Save Button
     private Button btnSubmit;
     // User Input
@@ -34,7 +30,8 @@ public class BmiFragment extends Fragment {
     private RadioButton userGender;
     private EditText userHeight, userWeight;
     // Text View
-    private TextView userBMI;
+    private TextView BMIText;
+    private TextView designationText;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -49,30 +46,43 @@ public class BmiFragment extends Fragment {
         userHeight = (EditText) root.findViewById(R.id.userHeight);
         userWeight = (EditText) root.findViewById(R.id.userWeight);
         // Text Views
-        userBMI = (TextView) root.findViewById(R.id.userBMI);
-        designation = (TextView) root.findViewById(R.id.userDesignation);
+        BMIText = (TextView) root.findViewById(R.id.userBMI);
+        designationText = (TextView) root.findViewById(R.id.userDesignation);
 
-        // User Submits the data
+        // When user submits the form
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Find selected gender
+                // 1. Find selected gender
                 int selectedGender = genderRadio.getCheckedRadioButtonId();
                 userGender = (RadioButton) root.findViewById(selectedGender);
-                // Validate user input
-//                validate();
-                // calculate BMI
-                BMI = calculateBMI(userGender.getText().toString(), Integer.parseInt(userHeight.getText().toString()), Integer.parseInt(userWeight.getText().toString()));
-                // Find Designation
-                String des = findDesignation(BMI, userGender.getText().toString());
-                // Set Text Views (BMI and Designation)
-                userBMI.setText(new DecimalFormat("##.#").format(BMI));
-                designation.setText(des);
+
+                // 2. Validate user input
+                if (!validateInput(userGender, userHeight.getText().toString(), userWeight.getText().toString())) {
+                    Toast.makeText(getActivity(), "Please fill all the fields", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // 3. Calculate BMI
+                BMI = calculateBMI(userGender.getText().toString(),
+                        Integer.parseInt(userHeight.getText().toString()),
+                        Integer.parseInt(userWeight.getText().toString())
+                );
+
+                // 4. Find Designation
+                userDesignation = findDesignation(BMI, userGender.getText().toString());
+
+                // 5. Display BMI and Designation on screen | Set Text Views
+                BMIText.setText(new DecimalFormat("##.#").format(BMI));
+                designationText.setText(userDesignation);
             }
 
-            private void validate() {
-                if (userHeight.getText().toString().equals("")) {
-                    Toast.makeText(getActivity(), userHeight.getText().toString(), Toast.LENGTH_LONG).show();
+            // Validation: Checks if a form input is empty
+            private boolean validateInput(RadioButton gender, String height, String weight) {
+                if (height.equals("") || weight.equals("") || gender.equals("")) {
+                    return false;
+                } else {
+                    return true;
                 }
             }
 
@@ -80,17 +90,18 @@ public class BmiFragment extends Fragment {
                 return weight / (Math.pow(height, 2)) * 10000;
             }
 
+            // Finds designation based on given BMI
             private String findDesignation(double bmi, String userGender) {
                 String designation = "";
                 if (userGender.equals("Female")) {
-                    designation = femaleDes(bmi);
+                    designation = femaleDesignation(bmi);
                 } else if (userGender.equals("Male")) {
-                    designation = maleDes(bmi);
+                    designation = maleDesignation(bmi);
                 }
                 return designation;
             }
 
-            private String femaleDes(double bmi) {
+            private String femaleDesignation(double bmi) {
 
                 if (bmi < 18.5) {
                     return "Underweight";
@@ -102,12 +113,12 @@ public class BmiFragment extends Fragment {
                     return "Obese";
                 } else if (bmi > 40) {
                     return "Morbidly obese";
-                } else  {
+                } else {
                     return null;
                 }
             }
 
-            private String maleDes(double bmi) {
+            private String maleDesignation(double bmi) {
 
                 if (bmi < 19.5) {
                     return "Underweight";
@@ -119,13 +130,12 @@ public class BmiFragment extends Fragment {
                     return "Obese";
                 } else if (bmi > 40) {
                     return "Morbidly obese";
-                } else  {
+                } else {
                     return null;
                 }
             }
 
         });
-
 
         return root;
     }
