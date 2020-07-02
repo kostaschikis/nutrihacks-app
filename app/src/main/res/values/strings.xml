@@ -33,6 +33,10 @@
     <string name="text_bmi">Your BMI</string>
     <string name="bmi_result"></string>
     <string name="user_des">Unknown</string>
+    <!--  Our Tema  -->
+    <string name="ceoDesc">CEO Founder
+
+    </string>
 
 
 </resources>

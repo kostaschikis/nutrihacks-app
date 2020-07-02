@@ -21,9 +21,6 @@ public class TeamFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_team, container, false);
 
-        final TextView textView;
-        textView = root.findViewById(R.id.text_team);
-
         return root;
     }
 }
