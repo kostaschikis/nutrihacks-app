@@ -79,7 +79,7 @@ public class BmiFragment extends Fragment {
 
             // Validation: Checks if a form input is empty
             private boolean validateInput(RadioButton gender, String height, String weight) {
-                if (height.equals("") || weight.equals("") || gender.equals("")) {
+                if (height.equals("") || weight.equals("") || gender == null) {
                     return false;
                 } else {
                     return true;

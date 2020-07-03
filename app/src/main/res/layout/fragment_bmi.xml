@@ -79,6 +79,7 @@
             android:id="@+id/userHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="(e.g. 180)"
             android:ems="10"
             android:inputType="number" />
 
@@ -94,6 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
+            android:hint="(e.g. 70)"
             android:ems="10"
             android:inputType="number" />
 
