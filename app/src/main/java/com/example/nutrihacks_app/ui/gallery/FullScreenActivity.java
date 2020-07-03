@@ -23,10 +23,13 @@ public class FullScreenActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
+        // Get image id from intent
         int position = i.getExtras().getInt("id");
 
+        // Find image based on id
         ImageAdapter imageAdapter = new ImageAdapter(this);
 
+        // Display image
         imageView.setImageResource(imageAdapter.imageArray[position]);
     }
 }

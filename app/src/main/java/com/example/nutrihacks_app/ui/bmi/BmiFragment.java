@@ -101,6 +101,7 @@ public class BmiFragment extends Fragment {
                 return designation;
             }
 
+            // Finds designation for male users
             private String femaleDesignation(double bmi) {
 
                 if (bmi < 18.5) {
@@ -118,6 +119,7 @@ public class BmiFragment extends Fragment {
                 }
             }
 
+            // Finds designation for female users
             private String maleDesignation(double bmi) {
 
                 if (bmi < 19.5) {

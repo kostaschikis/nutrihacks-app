@@ -10,11 +10,12 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.example.nutrihacks_app.R;
 
-public class ImageAdapter  extends BaseAdapter {
+public class ImageAdapter extends BaseAdapter {
 
 
     private FragmentActivity mContext;
 
+    // Array of images
     public int[] imageArray = {
             R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f
     };
@@ -25,19 +26,16 @@ public class ImageAdapter  extends BaseAdapter {
 
     @Override
     public int getCount() {
-
         return imageArray.length;
     }
 
     @Override
     public Object getItem(int position) {
-
         return imageArray[position];
     }
 
     @Override
     public long getItemId(int position) {
-
         return 0;
     }
 
