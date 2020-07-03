@@ -16,7 +16,7 @@ public class ImageAdapter  extends BaseAdapter {
     private FragmentActivity mContext;
 
     public int[] imageArray = {
-            R.drawable.b, R.drawable.g, R.drawable.h, R.drawable.image, R.drawable.l
+            R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f
     };
 
     public ImageAdapter(FragmentActivity mContext) {

@@ -63,6 +63,13 @@
                     android:gravity="center"
                     android:text="CEO Founder" />
 
+                <TextView
+                    android:id="@+id/textCEODesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip"
+                    android:textAlignment="center" />
+
             </LinearLayout>
 
             <!--     Dietologist      -->
@@ -109,6 +116,13 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="COO" />
+
+                    <TextView
+                        android:id="@+id/textDietDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu lobortis."
+                        android:textAlignment="center" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -156,6 +170,13 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="CTO" />
+
+                    <TextView
+                        android:id="@+id/textTrainerDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing bibendum est ultricies integer quis auctor elit."
+                        android:textAlignment="center" />
                 </LinearLayout>
 
             </LinearLayout>
