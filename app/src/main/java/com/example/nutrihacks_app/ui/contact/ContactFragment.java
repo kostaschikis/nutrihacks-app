@@ -7,12 +7,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
-
 import com.example.nutrihacks_app.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -68,6 +64,7 @@ public class ContactFragment extends Fragment {
         return root;
     }
 
+    // Tries to store user object to Firebase
     private void writeNewUser(String userId, User user) {
         // Store user in Firebase DB inside 'users' collection
         database.child("users").child(userId).setValue(user)
@@ -88,6 +85,7 @@ public class ContactFragment extends Fragment {
         uid++;
     }
 
+    // Checks if user has filled every form field
     private Boolean validateInput(String firsName, String lastName, String email, String age) {
         if (firsName.equals("") || lastName.equals("") || email.equals("") || age.equals("")) {
             return false;

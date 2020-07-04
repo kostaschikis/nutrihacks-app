@@ -39,6 +39,7 @@ public class ImageAdapter extends BaseAdapter {
         return 0;
     }
 
+    // Sets image view with the right image
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 

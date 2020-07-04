@@ -16,11 +16,14 @@ public class FullScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_screen);
 
+        // Get image view from layout
         imageView = (ImageView) findViewById(R.id.image_view);
 
+        // Hide Action Bar
         getSupportActionBar().hide();
         getSupportActionBar().setTitle("Full Screen Image");
 
+        // Get Intent from GalleryFragment
         Intent i = getIntent();
 
         // Get image id from intent

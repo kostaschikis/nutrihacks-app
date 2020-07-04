@@ -28,7 +28,7 @@ public class GalleryFragment extends Fragment {
         // Set image adapter to the Grid View
         gridView.setAdapter(new ImageAdapter(getActivity()));
 
-        // Fullscreen
+        // When user clicks a image on grid view make a new intent that goes to FullScreenActivity
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
